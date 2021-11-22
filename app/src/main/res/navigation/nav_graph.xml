@@ -16,4 +16,10 @@
         android:name="com.android.healthcareapp.ui.VitalsFragment"
         android:label="@string/vitals_form"
         tools:layout="@layout/fragment_vitals" />
+
+    <fragment
+        android:id="@+id/visitFormAFragment"
+        android:name="com.android.healthcareapp.ui.VisitFormAFragment"
+        android:label="@string/visit_form_a"
+        tools:layout="@layout/fragment_visit_form_a"/>
 </navigation>
