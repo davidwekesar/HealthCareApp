@@ -9,4 +9,5 @@
     <string name="close">Close</string>
     <string name="save">Save</string>
     <string name="patient_registration_form">Patient registration form</string>
+    <string name="input_required">input required</string>
 </resources>

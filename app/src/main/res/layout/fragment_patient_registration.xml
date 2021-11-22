@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/patient_number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTxtPatientNum"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTxtPatientNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,7 +33,7 @@
         app:layout_constraintGuide_percent="0.3" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/editTxtRegDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -41,19 +41,19 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtPatientNum" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registration_date"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextDate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTxtRegDate"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTxtFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -61,19 +61,19 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtRegDate" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/first_name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTxtFirstName"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/editTxtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -81,19 +81,19 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtFirstName" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/last_name"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTxtLastName"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextDate2"
+        android:id="@+id/editTxtDoB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -101,40 +101,39 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtLastName" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/date_of_birth"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextDate2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTxtDoB"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerGender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxtDoB" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/gender"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerGender"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinner" />
+        app:layout_constraintTop_toTopOf="@+id/spinnerGender" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -142,17 +141,17 @@
         android:text="@string/close"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGender" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGender" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
