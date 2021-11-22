@@ -10,4 +10,12 @@
     <string name="save">Save</string>
     <string name="patient_registration_form">Patient registration form</string>
     <string name="input_required">input required</string>
+    <string name="patient_name">Patient Name:</string>
+    <string name="visit_date">Visit Date</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="bmi">BMI</string>
+    <string name="in_kg">in KG</string>
+    <string name="in_cm">in CM</string>
+    <string name="vitals_form">Patient vitals form</string>
 </resources>

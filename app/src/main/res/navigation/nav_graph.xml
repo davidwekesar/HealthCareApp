@@ -9,5 +9,11 @@
         android:id="@+id/patientRegistrationFragment"
         android:name="com.android.healthcareapp.ui.PatientRegistrationFragment"
         android:label="@string/patient_registration_form"
-        tools:layout="@layout/fragment_patient_registration"/>
+        tools:layout="@layout/fragment_patient_registration" />
+
+    <fragment
+        android:id="@+id/vitalsFragment"
+        android:name="com.android.healthcareapp.ui.VitalsFragment"
+        android:label="@string/vitals_form"
+        tools:layout="@layout/fragment_vitals" />
 </navigation>
