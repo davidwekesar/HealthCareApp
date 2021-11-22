@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Health Care App</string>
+    <string name="patient_number">Patient Number</string>
+    <string name="registration_date">Registration Date</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="date_of_birth">DOB</string>
+    <string name="gender">Gender</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="patient_registration_form">Patient registration form</string>
+</resources>
