@@ -28,4 +28,7 @@
     <string name="visit_form_a">Patient visit form A</string>
     <string name="drugs_question">Are you currently taking any drugs?</string>
     <string name="visit_form_b">Patient visit form B</string>
+    <string name="date">Date</string>
+    <string name="placeholder_date">Tue, 24 Jun 2021</string>
+    <string name="patient_listing">Patient Listing</string>
 </resources>

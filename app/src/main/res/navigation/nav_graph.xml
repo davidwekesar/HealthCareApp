@@ -28,4 +28,10 @@
         android:name="com.android.healthcareapp.ui.VisitFormBFragment"
         android:label="@string/visit_form_b"
         tools:layout="@layout/fragment_visit_form_b" />
+
+    <fragment
+        android:id="@+id/patientsListFragment"
+        android:name="com.android.healthcareapp.ui.PatientsListFragment"
+        android:label="@string/patient_listing"
+        tools:layout="@layout/fragment_patients_list"/>
 </navigation>
