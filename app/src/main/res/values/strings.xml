@@ -18,7 +18,7 @@
     <string name="in_kg">in KG</string>
     <string name="in_cm">in CM</string>
     <string name="vitals_form">Patient vitals form</string>
-    <string name="general_health">General health?</string>
+    <string name="general_health_question">General health?</string>
     <string name="good">Good</string>
     <string name="poor">Poor</string>
     <string name="diet_question">Have you ever been on a diet to lose weight?</string>
@@ -26,4 +26,6 @@
     <string name="no">No</string>
     <string name="comments">Comments</string>
     <string name="visit_form_a">Patient visit form A</string>
+    <string name="drugs_question">Are you currently taking any drugs?</string>
+    <string name="visit_form_b">Patient visit form B</string>
 </resources>

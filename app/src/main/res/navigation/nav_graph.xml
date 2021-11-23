@@ -21,5 +21,11 @@
         android:id="@+id/visitFormAFragment"
         android:name="com.android.healthcareapp.ui.VisitFormAFragment"
         android:label="@string/visit_form_a"
-        tools:layout="@layout/fragment_visit_form_a"/>
+        tools:layout="@layout/fragment_visit_form_a" />
+
+    <fragment
+        android:id="@+id/visitFormBFragment"
+        android:name="com.android.healthcareapp.ui.VisitFormBFragment"
+        android:label="@string/visit_form_b"
+        tools:layout="@layout/fragment_visit_form_b" />
 </navigation>
