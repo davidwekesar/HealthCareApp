@@ -9,12 +9,12 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.android.healthcareapp.R
-import com.android.healthcareapp.databinding.FragmentPatientRegistrationBinding
+import com.android.healthcareapp.databinding.FragmentRegistrationBinding
 import com.android.healthcareapp.util.isTextFieldEmpty
 
-class PatientRegistrationFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class RegistrationFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
-    private var _binding: FragmentPatientRegistrationBinding? = null
+    private var _binding: FragmentRegistrationBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,7 +22,7 @@ class PatientRegistrationFragment : Fragment(), AdapterView.OnItemSelectedListen
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPatientRegistrationBinding.inflate(inflater, container, false)
+        _binding = FragmentRegistrationBinding.inflate(inflater, container, false)
 
         val saveButton = binding.btnSave
         saveButton.setOnClickListener {

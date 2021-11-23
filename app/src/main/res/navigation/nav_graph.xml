@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/patientRegistrationFragment">
+    app:startDestination="@id/registrationFragment">
 
     <fragment
-        android:id="@+id/patientRegistrationFragment"
-        android:name="com.android.healthcareapp.ui.PatientRegistrationFragment"
+        android:id="@+id/registrationFragment"
+        android:name="com.android.healthcareapp.ui.RegistrationFragment"
         android:label="@string/patient_registration_form"
-        tools:layout="@layout/fragment_patient_registration" />
+        tools:layout="@layout/fragment_registration" />
 
     <fragment
         android:id="@+id/vitalsFragment"
