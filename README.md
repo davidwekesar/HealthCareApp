@@ -8,7 +8,7 @@ An android application to register patients, take vitals, collect additional inf
   <img src="screenshots/Screenshot_20211124-223556.png" width="240">
 </div>
 
-# Libraries
+## Libraries
 
 - [Android KTX](https://developer.android.com/kotlin/ktx) - Write more concise, idiomatic Kotlin code.
 - Architecture components
@@ -18,3 +18,6 @@ An android application to register patients, take vitals, collect additional inf
 - Third party libraries
     - [Hamcrest](http://hamcrest.org/) - for making assertion statements more readable.
     - [Timber](https://github.com/JakeWharton/timber) - a logging library for Android
+
+## Backend
+- [Firebase](https://firebase.google.com/) - uses realtime database to store and sync data.
