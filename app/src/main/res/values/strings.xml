@@ -31,4 +31,7 @@
     <string name="date">Date</string>
     <string name="placeholder_date">Tue, 24 Jun 2021</string>
     <string name="patient_listing">Patient Listing</string>
+    <string name="select_dob">Select Date of Birth</string>
+    <string name="select_reg_date">Select Registration Date</string>
+    <string name="error_date_format">Invalid Date Format. Required format: dd/mm/yyyy</string>
 </resources>

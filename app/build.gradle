@@ -63,4 +63,13 @@ dependencies {
 
     // Robolectric
     testImplementation "org.robolectric:robolectric:$robolectric_version"
+
+    // Fragment KTX
+    implementation "androidx.fragment:fragment-ktx:1.4.0"
+
+    // Hamcrest
+    testImplementation "org.hamcrest:hamcrest:$hamcrest_version"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
 }
