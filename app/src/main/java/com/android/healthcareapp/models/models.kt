@@ -17,18 +17,13 @@ data class PatientVitals(
     val bmi: Int
 )
 
-data class VisitFormA(
+data class VisitForm(
     val patientName: String,
+    val dateOfBirth: Long,
     val visitDate: Long,
     val health: String?,
-    val onDiet: String?,
-    val comments: String
-)
-
-data class VisitFormB(
-    val patientName: String,
-    val visitDate: Long,
-    val health: String?,
-    val onDrugs: String?,
-    val comments: String
+    val onDiet: String? = null,
+    val onDrugs: String? = null,
+    val comments: String,
+    val bmi: Int
 )

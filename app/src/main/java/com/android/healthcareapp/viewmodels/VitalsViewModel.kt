@@ -18,12 +18,14 @@ class VitalsViewModel : ViewModel() {
     private val _navigateToVisitFormB = MutableLiveData<Boolean?>()
     val navigateToVisitFormB: LiveData<Boolean?> get() = _navigateToVisitFormB
 
-    private val _isSaveProgressVisible = MutableLiveData<Boolean>()
-    val isSaveProgressVisible: LiveData<Boolean> get() = _isSaveProgressVisible
+    private val _isSaveProgressVisible = MutableLiveData<Boolean?>()
+    val isSaveProgressVisible: LiveData<Boolean?> get() = _isSaveProgressVisible
+
+    private var patientId: Long? = null
 
     fun savePatientVitals(patientVitals: PatientVitals) {
         database.child("patientVitals")
-            .child(patientVitals.patientName)
+            .child("$patientId")
             .setValue(patientVitals)
             .addOnSuccessListener {
                 Timber.i("Success! saved patient vitals to firebase.")
@@ -41,6 +43,14 @@ class VitalsViewModel : ViewModel() {
 
     fun showSaveButtonProgress() {
         _isSaveProgressVisible.value = true
+    }
+
+    fun setPatientId(id: Long) {
+        patientId = id
+    }
+
+    fun doneShowingSaveButtonProgress() {
+        _isSaveProgressVisible.value = null
     }
 
     fun doneNavigatingToVisitFormA() {

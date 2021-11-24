@@ -15,8 +15,8 @@ class RegistrationViewModel : ViewModel() {
     private var _navigateToVitalsFragment = MutableLiveData<Boolean?>()
     val navigateToVitalsFragment: LiveData<Boolean?> get() = _navigateToVitalsFragment
 
-    private val _isSaveProgressVisible = MutableLiveData<Boolean>()
-    val isSaveProgressVisible: LiveData<Boolean> get() = _isSaveProgressVisible
+    private val _isSaveProgressVisible = MutableLiveData<Boolean?>()
+    val isSaveProgressVisible: LiveData<Boolean?> get() = _isSaveProgressVisible
 
     fun savePatientInfo(patient: Patient) {
         database.child("patients")
@@ -34,6 +34,10 @@ class RegistrationViewModel : ViewModel() {
 
     fun showSaveButtonProgress() {
         _isSaveProgressVisible.value = true
+    }
+
+    fun doneShowingSaveButtonProgress() {
+        _isSaveProgressVisible.value = null
     }
 
     fun doneNavigatingToVitalsFragment() {

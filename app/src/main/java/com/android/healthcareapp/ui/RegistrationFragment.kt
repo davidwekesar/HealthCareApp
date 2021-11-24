@@ -1,6 +1,5 @@
 package com.android.healthcareapp.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -58,7 +56,6 @@ class RegistrationFragment : Fragment(), AdapterView.OnItemSelectedListener {
         initListeners()
         initObservers()
         setupSpinner()
-        setupSaveButtonAnim()
     }
 
     private fun initViews() {
@@ -68,6 +65,7 @@ class RegistrationFragment : Fragment(), AdapterView.OnItemSelectedListener {
         lastNameEditTxt = binding.lastNameEditTxt
         dobEditTxt = binding.dateOfBirthEditTxt
         saveButton = binding.btnSave
+        setupSaveButtonAnim()
     }
 
     private fun initListeners() {
@@ -155,10 +153,11 @@ class RegistrationFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private fun vitalsFragmentNavigationObserver() {
-        viewModel.navigateToVitalsFragment.observe(viewLifecycleOwner, {navigate:Boolean?->
+        viewModel.navigateToVitalsFragment.observe(viewLifecycleOwner, { navigate: Boolean? ->
             navigate?.let {
                 if (it) {
                     findNavController().navigate(R.id.vitalsFragment)
+                    viewModel.doneShowingSaveButtonProgress()
                     viewModel.doneNavigatingToVitalsFragment()
                 }
             }
@@ -171,14 +170,15 @@ class RegistrationFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private fun saveProgressVisibilityObserver() {
-        viewModel.isSaveProgressVisible.observe(viewLifecycleOwner, {
-            if (it) {
-                saveButton.showProgress {
-                    buttonText = getString(R.string.saving)
-                    progressColor = Color.WHITE
+        viewModel.isSaveProgressVisible.observe(viewLifecycleOwner, { showProgress ->
+            showProgress?.let {
+                if (it) {
+                    saveButton.showProgress {
+                        buttonTextRes = R.string.saving
+                    }
+                } else {
+                    saveButton.hideProgress(R.string.save)
                 }
-            } else {
-                saveButton.hideProgress(R.string.save)
             }
         })
     }

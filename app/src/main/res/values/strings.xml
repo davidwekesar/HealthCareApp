@@ -34,5 +34,5 @@
     <string name="select_dob">Select Date of Birth</string>
     <string name="select_reg_date">Select Registration Date</string>
     <string name="error_date_format">Invalid Date Format. Required format: dd/mm/yyyy</string>
-    <string name="saving">Saving</string>
+    <string name="saving">Saving…</string>
 </resources>

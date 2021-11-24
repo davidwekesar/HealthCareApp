@@ -1,11 +1,9 @@
 package com.android.healthcareapp.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -154,6 +152,7 @@ class VitalsFragment : Fragment() {
             navigate?.let {
                 if (it) {
                     findNavController().navigate(R.id.visitFormAFragment)
+                    viewModel.doneShowingSaveButtonProgress()
                     viewModel.doneNavigatingToVisitFormA()
                 }
             }
@@ -165,6 +164,7 @@ class VitalsFragment : Fragment() {
             navigate?.let {
                 if (it) {
                     findNavController().navigate(R.id.visitFormBFragment)
+                    viewModel.doneShowingSaveButtonProgress()
                     viewModel.doneNavigatingToVisitFormB()
                 }
             }
@@ -172,14 +172,15 @@ class VitalsFragment : Fragment() {
     }
 
     private fun saveProgressVisibilityObserver() {
-        viewModel.isSaveProgressVisible.observe(viewLifecycleOwner, {
-            if (it) {
-                saveButton.showProgress {
-                    buttonTextRes = R.string.saving
-                    progressColor = Color.WHITE
+        viewModel.isSaveProgressVisible.observe(viewLifecycleOwner, { showProgress ->
+            showProgress?.let {
+                if (it) {
+                    saveButton.showProgress {
+                        buttonTextRes = R.string.saving
+                    }
+                } else {
+                    saveButton.hideProgress(R.string.save)
                 }
-            } else {
-                saveButton.hideProgress(R.string.save)
             }
         })
     }
@@ -188,6 +189,7 @@ class VitalsFragment : Fragment() {
         sharedViewModel.registrationInfo.observe(viewLifecycleOwner, { patient ->
             val patientName = "${patient.firstName} ${patient.lastName}"
             patientNameEditTxt.setText(patientName)
+            viewModel.setPatientId(patient.patientId!!)
         })
     }
 
