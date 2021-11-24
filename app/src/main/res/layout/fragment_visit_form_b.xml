@@ -11,11 +11,12 @@
         android:padding="24dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout9"
+            android:id="@+id/nameInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toTopOf="parent">
@@ -25,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName|textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.Guideline
@@ -41,21 +42,22 @@
             android:layout_height="wrap_content"
             android:text="@string/patient_name"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout9"
+            app:layout_constraintBaseline_toBaselineOf="@+id/nameInputLayout"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout10"
+            android:id="@+id/visitDateInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
+            app:layout_constraintTop_toBottomOf="@+id/nameInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/visitDateEditText"
@@ -71,7 +73,7 @@
             android:layout_height="wrap_content"
             android:text="@string/visit_date"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout10"
+            app:layout_constraintBaseline_toBaselineOf="@+id/visitDateInputLayout"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
@@ -85,7 +87,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout10" />
+            app:layout_constraintTop_toBottomOf="@+id/visitDateInputLayout" />
 
         <RadioGroup
             android:id="@+id/healthRadioGroup"
@@ -154,6 +156,7 @@
             app:layout_constraintTop_toBottomOf="@+id/drugsRadioGroup">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/commentsEditTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"

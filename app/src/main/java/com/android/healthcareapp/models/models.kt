@@ -24,3 +24,11 @@ data class VisitFormA(
     val onDiet: String?,
     val comments: String
 )
+
+data class VisitFormB(
+    val patientName: String,
+    val visitDate: Long,
+    val health: String?,
+    val onDrugs: String?,
+    val comments: String
+)
