@@ -38,4 +38,14 @@ class UtilsTest {
 
         assertThat(result, `is`(expectedResult))
     }
+
+    @Test
+    fun calculateAge_birthdayDate_returnsAge() {
+        val birthday = 808514439L
+        val expectedAge = "26"
+
+        val result = calculateAge(birthday)
+
+        assertThat(result, `is`(expectedAge))
+    }
 }

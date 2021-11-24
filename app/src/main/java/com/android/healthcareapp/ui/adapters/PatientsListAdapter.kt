@@ -4,8 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.healthcareapp.databinding.ListItemPatientBinding
+import com.android.healthcareapp.models.VisitForm
+import com.android.healthcareapp.util.calculateAge
+import com.android.healthcareapp.util.getBmiStatus
 
-class PatientsListAdapter: RecyclerView.Adapter<PatientViewHolder>() {
+class PatientsListAdapter(private val patientsList: List<VisitForm>): RecyclerView.Adapter<PatientViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ListItemPatientBinding.inflate(layoutInflater, parent, false)
@@ -13,12 +16,10 @@ class PatientsListAdapter: RecyclerView.Adapter<PatientViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: PatientViewHolder, position: Int) {
-        holder.bind()
+        holder.bind(patientsList[position])
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = patientsList.size
 }
 
 class PatientViewHolder(binding: ListItemPatientBinding): RecyclerView.ViewHolder(binding.root) {
@@ -26,7 +27,9 @@ class PatientViewHolder(binding: ListItemPatientBinding): RecyclerView.ViewHolde
     private val textAge = binding.textAge
     private val textBmiStatus = binding.textBmiStatus
 
-    fun bind() {
-
+    fun bind(visitForm: VisitForm) {
+        textPatientName.text = visitForm.patientName
+        textAge.text = calculateAge(visitForm.dateOfBirth)
+        textBmiStatus.text = getBmiStatus(visitForm.bmi)
     }
 }
