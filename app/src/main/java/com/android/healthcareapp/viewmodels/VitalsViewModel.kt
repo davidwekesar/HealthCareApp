@@ -12,11 +12,11 @@ class VitalsViewModel : ViewModel() {
 
     private val database = FirebaseDatabase.getInstance(DATABASE_URL).reference
 
-    private val _navigateToVisitFormA = MutableLiveData<Boolean>()
-    val navigateToVisitFormA: LiveData<Boolean> get() = _navigateToVisitFormA
+    private val _navigateToVisitFormA = MutableLiveData<Boolean?>()
+    val navigateToVisitFormA: LiveData<Boolean?> get() = _navigateToVisitFormA
 
-    private val _navigateToVisitFormB = MutableLiveData<Boolean>()
-    val navigateToVisitFormB: LiveData<Boolean> get() = _navigateToVisitFormB
+    private val _navigateToVisitFormB = MutableLiveData<Boolean?>()
+    val navigateToVisitFormB: LiveData<Boolean?> get() = _navigateToVisitFormB
 
     private val _isSaveProgressVisible = MutableLiveData<Boolean>()
     val isSaveProgressVisible: LiveData<Boolean> get() = _isSaveProgressVisible
@@ -41,5 +41,13 @@ class VitalsViewModel : ViewModel() {
 
     fun showSaveButtonProgress() {
         _isSaveProgressVisible.value = true
+    }
+
+    fun doneNavigatingToVisitFormA() {
+        _navigateToVisitFormA.value = null
+    }
+
+    fun doneNavigatingToVisitFormB() {
+        _navigateToVisitFormB.value = null
     }
 }

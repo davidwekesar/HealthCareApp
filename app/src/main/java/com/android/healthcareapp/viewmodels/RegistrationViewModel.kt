@@ -12,8 +12,11 @@ class RegistrationViewModel : ViewModel() {
 
     private val database = FirebaseDatabase.getInstance(DATABASE_URL).reference
 
-    private var _navigateToVitalsFragment = MutableLiveData<Boolean>()
-    val navigateToVitalsFragment: LiveData<Boolean> get() = _navigateToVitalsFragment
+    private var _navigateToVitalsFragment = MutableLiveData<Boolean?>()
+    val navigateToVitalsFragment: LiveData<Boolean?> get() = _navigateToVitalsFragment
+
+    private val _isSaveProgressVisible = MutableLiveData<Boolean>()
+    val isSaveProgressVisible: LiveData<Boolean> get() = _isSaveProgressVisible
 
     fun savePatientInfo(patient: Patient) {
         database.child("patients")
@@ -27,5 +30,13 @@ class RegistrationViewModel : ViewModel() {
                 _navigateToVitalsFragment.value = false
                 Timber.e("Failure: ${exception.message}")
             }
+    }
+
+    fun showSaveButtonProgress() {
+        _isSaveProgressVisible.value = true
+    }
+
+    fun doneNavigatingToVitalsFragment() {
+        _navigateToVitalsFragment.value = null
     }
 }
