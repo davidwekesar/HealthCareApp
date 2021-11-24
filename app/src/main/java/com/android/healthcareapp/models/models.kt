@@ -16,3 +16,11 @@ data class PatientVitals(
     val weight: Double,
     val bmi: Int
 )
+
+data class VisitFormA(
+    val patientName: String,
+    val visitDate: Long,
+    val health: String?,
+    val onDiet: String?,
+    val comments: String
+)
