@@ -4,14 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.android.healthcareapp.models.Patient
+import com.android.healthcareapp.util.DATABASE_URL
 import com.google.firebase.database.FirebaseDatabase
 import timber.log.Timber
 
 class RegistrationViewModel : ViewModel() {
 
-    private val database = FirebaseDatabase.getInstance(
-        "https://health-care-app-4893b-default-rtdb.asia-southeast1.firebasedatabase.app/"
-    ).reference
+    private val database = FirebaseDatabase.getInstance(DATABASE_URL).reference
 
     private var _navigateToVitalsFragment = MutableLiveData<Boolean>()
     val navigateToVitalsFragment: LiveData<Boolean> get() = _navigateToVitalsFragment
@@ -22,7 +21,7 @@ class RegistrationViewModel : ViewModel() {
             .setValue(patient)
             .addOnSuccessListener {
                 _navigateToVitalsFragment.value = true
-                Timber.i("Success! patient info saved to firebase")
+                Timber.i("Success! patient info saved to Firebase")
             }
             .addOnFailureListener { exception ->
                 _navigateToVitalsFragment.value = false

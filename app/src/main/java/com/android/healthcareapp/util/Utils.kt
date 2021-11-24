@@ -4,6 +4,9 @@ import android.text.Editable
 import android.widget.EditText
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.pow
+
+const val DATABASE_URL = "https://health-care-app-4893b-default-rtdb.asia-southeast1.firebasedatabase.app/"
 
 fun EditText.isTextFieldEmpty(): Boolean {
     val editTextValue = text.toString().trim()
@@ -35,4 +38,9 @@ fun String.convertToUnixTime(): Long {
     val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
     val parsedDate = sdf.parse(this)!!
     return parsedDate.time / 1000
+}
+
+fun calculateBmi(heightInCm: Double, weight: Double): Int {
+    val heightInMetres = heightInCm / 100
+    return weight.div(heightInMetres.pow(2)).toInt()
 }

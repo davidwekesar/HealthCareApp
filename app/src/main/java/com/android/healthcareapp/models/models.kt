@@ -8,3 +8,11 @@ data class Patient(
     val dateOfBirth: Long? = null,
     val gender: String? = null
 )
+
+data class PatientVitals(
+    val patientName: String,
+    val visitDate: Long,
+    val height: Double,
+    val weight: Double,
+    val bmi: Int
+)
